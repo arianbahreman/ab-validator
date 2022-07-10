@@ -6,6 +6,18 @@ A javascript  zero-dependencies asynchronous validation library with built-in an
 import { Validator, ValidatorField, Logics } from 'ab-validator'
 ```
 
+## Logics
+```javascript
+import { Logics } from 'ab-validator'
+
+Logics.Empty( errorMessage )
+Logics.Custom( errorMessage, callback )
+Logics.isBoolean( errorMessage )
+Logics.isNumber( errorMessage, min, max )
+Logics.isString( errorMessage, minLength, maxLength )
+Logics.RegExp( errorMessage, RegExp )
+```
+
 ## Single field validation
 ```javascript
 import { ValidatorField, Logics } from 'ab-validator'

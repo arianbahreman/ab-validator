@@ -1,6 +1,6 @@
 {
   "name": "ab-validator",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "A javascript  zero-dependencies asynchronous validation library with built-in and custom logics.",
   "main": "src/index.js",
   "scripts": {
