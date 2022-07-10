@@ -1,5 +1,5 @@
 # Validation
-A zero-dependencies Javascript asynchronous validation library with built-in and custom logics.
+A zero-dependencies Javascript asynchronous validator library with built-in and custom logics.
 
 ## Usage
 ```javascript
@@ -11,6 +11,7 @@ import { Validator, ValidatorField, Logics } from 'ab-validator'
 import { Logics } from 'ab-validator'
 
 Logics.Empty( errorMessage )
+Logics.Enum( errorMessage, list )
 Logics.Custom( errorMessage, callback )
 Logics.isBoolean( errorMessage )
 Logics.isNumber( errorMessage, min, max )
