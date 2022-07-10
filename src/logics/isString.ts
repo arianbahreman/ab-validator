@@ -1,4 +1,4 @@
-export default ( error, minLength, maxLength ) => {
+export default ( error: string, minLength: number, maxLength: number ) => {
 
   const type = 'string'
   const props = {
@@ -6,7 +6,7 @@ export default ( error, minLength, maxLength ) => {
     maxLength
   }
   
-  const resolve = value => {
+  const resolve = <T extends string>( value: T ) => {
     
     if ( typeof value !== 'string' )
       return false

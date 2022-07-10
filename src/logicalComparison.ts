@@ -1,4 +1,11 @@
-export default ( logic, value ) => {
+export interface ValidatorLogic {
+  type: string,
+  error: string,
+  props: {},
+  resolve: Function
+}
+
+export default <T>( logic: ValidatorLogic, value: T ) => {
 
   return new Promise( async ( resolve, reject ) => {
 
@@ -8,6 +15,6 @@ export default ( logic, value ) => {
       type: logic.type,
       error: logic.error,
       props: logic.props
-    } )
+    })
   })
 }

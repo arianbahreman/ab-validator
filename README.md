@@ -1,5 +1,5 @@
 # Validation
-A javascript  zero-dependencies asynchronous validation library with built-in and custom logics.
+A zero-dependencies Javascript asynchronous validation library with built-in and custom logics.
 
 ## Usage
 ```javascript

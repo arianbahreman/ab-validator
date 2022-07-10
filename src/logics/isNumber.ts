@@ -1,4 +1,4 @@
-export default ( error, min, max ) => {
+export default ( error: string, min: number, max: number ) => {
 
   const type = 'number'
   const props = {
@@ -6,8 +6,8 @@ export default ( error, min, max ) => {
     max
   }
 
-  const resolve = value => {
-2
+  const resolve = <T extends number>( value: T ) => {
+    
     if ( isNaN( value ) ) {
       return false
     } else {

@@ -1,9 +1,9 @@
-export default ( error ) => {
+export default ( error: string ) => {
 
   const type = 'empty'
   const props = {}
 
-  const resolve = value => {
+  const resolve = <T extends number>( value: T ) => {
     return Boolean( value || value === 0 )
   }
 

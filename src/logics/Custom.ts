@@ -1,9 +1,9 @@
-export default ( error, callback ) => {
+export default ( error: string, callback: Function ) => {
 
   const type = 'custom-function'
   const props = {}
 
-  const resolve = value => {
+  const resolve = <T>( value: T ) => {
     return callback( value )
   }
 

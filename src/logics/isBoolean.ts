@@ -1,9 +1,9 @@
-export default ( error ) => {
+export default ( error: string ) => {
 
   const type = 'bool'
   const props = {}
 
-  const resolve = value => {
+  const resolve = <T extends boolean>( value: T ) => {
     return value === true || value === false
   }
 
