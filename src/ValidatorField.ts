@@ -59,7 +59,7 @@ const Validator = ( name: string, logics: Array<ValidatorLogic> ) => {
     })
   }
 
-  return { name, validate }
+  return { name, validate, subscribe }
 }
 
 export default Validator
