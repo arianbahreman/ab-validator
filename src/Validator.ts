@@ -4,7 +4,7 @@ interface ValidatorFields {
 }
 
 interface ValidatorValues {
-  [key: string]: any
+  [ key: string ]: any
 }
 
 interface ValidatorState {
