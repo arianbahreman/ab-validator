@@ -4,7 +4,7 @@
   "description": "A javascript  zero-dependencies asynchronous validation library with built-in and custom logics.",
   "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npx tsc"
   },
   "keywords": [
     "validator",
