@@ -1,6 +1,6 @@
 {
   "name": "ab-validator",
-  "version": "0.2.0",
+  "version": "0.2.2",
   "description": "A javascript  zero-dependencies asynchronous validation library with built-in and custom logics.",
   "main": "lib/index.js",
   "scripts": {
@@ -12,7 +12,7 @@
     "javascript"
   ],
   "author": "Arian Bahreman",
-  "license": "ISC",
+  "license": "MIT License",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/arianbahreman/ab-validator.git"
@@ -23,5 +23,8 @@
   "homepage": "https://github.com/arianbahreman/ab-validator#readme",
   "devDependencies": {
     "typescript": "^4.7.4"
-  }
+  },
+  "files": [
+    "lib/**/*"
+  ]
 }
