@@ -7,6 +7,7 @@ import { Validator, ValidatorField, Logics } from 'ab-validator'
 ```
 
 ## Logics
+
 ```javascript
 import { Logics } from 'ab-validator'
 
@@ -18,6 +19,16 @@ Logics.isNumber( errorMessage, min, max )
 Logics.isString( errorMessage, minLength, maxLength )
 Logics.RegExp( errorMessage, RegExp )
 ```
+
+|Method|Description|Parameters|
+|----|----|----|
+|Empty|Return false if value is empty|error: string \| number|
+|Enum|Return false if value is not in list|error: string \| number, list: any|
+|isString|Return false if value is not string or length is not between the range|error: string \| number<br/>minLength: number (optional)<br/>maxLength: number (optional)
+|isBoolean|Return false if value is equal to false|error: string \| number|
+|isNumber|Return false if value is not number or not in the range|error: string \| number<br/>min: number<br/>max: number|
+|RegExp|Return false if pattern not match with the value|error: string \| number<br/>pattern: RegExp|
+Custom|Will pass value to a custom function. function should return true/false or a Promise for async validating|error: string \| number<br/>callback: Function => boolean \| Promise
 
 ## Single field validation
 ```javascript
