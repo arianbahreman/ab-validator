@@ -2,6 +2,10 @@ import ValidatorField from './ValidatorField'
 
 export type LogicError = string | number
 
+interface LogicProps {
+  [ key: string ]: unknown
+}
+
 export interface ValidatorFieldType {
   name: string,
   validate: CallableFunction
@@ -9,8 +13,8 @@ export interface ValidatorFieldType {
 
 export interface ValidatorLogic {
   type: string,
-  error: string,
-  props: typeof Object,
+  error: LogicError,
+  props: LogicProps,
   resolve: CallableFunction
 }
 
