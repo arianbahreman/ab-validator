@@ -4,7 +4,7 @@
   "description": "A javascript  zero-dependencies asynchronous validation library with built-in and custom logics.",
   "main": "lib/index.js",
   "scripts": {
-    "build": "npx tsc"
+    "build": "npx eslint src/** && npx tsc"
   },
   "keywords": [
     "validator",
@@ -22,6 +22,9 @@
   },
   "homepage": "https://github.com/arianbahreman/ab-validator#readme",
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.30.6",
+    "@typescript-eslint/parser": "^5.30.6",
+    "eslint": "^8.19.0",
     "typescript": "^4.7.4"
   },
   "files": [
