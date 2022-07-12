@@ -1,30 +1,19 @@
-import ValidatorField, { ValidatorResponse } from "./ValidatorField"
-
-interface ValidatorFields {
-}
-
-interface ValidatorValues {
-  [ key: string ]: any
-}
-
-interface ValidatorState {
-  status: string,
-  fields: Array<typeof ValidatorField>
-}
+import ValidatorField from "./ValidatorField"
+import { ValidatorFields, ValidatorValues, ValidatorState, ValidatorFieldType, ValidatorLogic } from './types'
 
 const Validator = ( fields: ValidatorFields ) => {
 
-  for ( let fieldName in fields ) {
-    fields[ fieldName ] = ValidatorField( fieldName, fields[ fieldName ] )
+  for ( const fieldName in fields ) {
+    fields[ fieldName ] = ValidatorField( fieldName, fields[ fieldName ] as ValidatorLogic[] )
   }
 
   /**
    * 
    * @param {Function} callback 
    */
-  let subscribeCallback: Function
+  let subscribeCallback: CallableFunction
 
-  const subscribe = ( callback: Function ) => {
+  const subscribe = ( callback: CallableFunction ) => {
     subscribeCallback = callback
   }
 
@@ -42,8 +31,8 @@ const Validator = ( fields: ValidatorFields ) => {
 
     const validationFields: Array<typeof ValidatorField> = []
 
-    for ( let fieldName in values ) {
-      validationFields.push( fields[ fieldName ].validate( values[ fieldName ] ) )
+    for ( const fieldName in values ) {
+      validationFields.push( ( fields[ fieldName ] as ValidatorFieldType ).validate( values[ fieldName ] ) )
     }
 
     return new Promise( resolve => {

@@ -1,4 +1,4 @@
-export default ( error: string, callback: Function ) => {
+export default ( error: string, callback: CallableFunction ) => {
 
   const type = 'custom-function'
   const props = {}

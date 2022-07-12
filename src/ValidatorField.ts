@@ -1,16 +1,5 @@
-import logicalComparison, { ValidatorLogic } from "./logicalComparison"
-
-export interface ValidatorResponse {
-  status: string,
-  value?: any
-  reason?: any
-}
-
-interface ValidatorFieldState {
-  name: string,
-  status: string,
-  errors: Array<ValidatorResponse>
-}
+import logicalComparison from "./logicalComparison"
+import { ValidatorLogic, ValidatorFieldState } from "./types"
 
 const Validator = ( name: string, logics: Array<ValidatorLogic> ) => {
 
@@ -19,9 +8,9 @@ const Validator = ( name: string, logics: Array<ValidatorLogic> ) => {
    * 
    * @param {Function} callback 
    */
-  let subscribeCallback: Function
+  let subscribeCallback: CallableFunction
 
-  const subscribe = ( callback: Function ) => {
+  const subscribe = ( callback: CallableFunction ) => {
     subscribeCallback = callback
   }
 
@@ -45,7 +34,7 @@ const Validator = ( name: string, logics: Array<ValidatorLogic> ) => {
         logics.map( logic => logicalComparison( logic, value ) )
       ).then( result => {
 
-        result.map( ( item: ValidatorResponse ) => {
+        result.map( ( item ) => {
           
           if ( item.status == 'rejected' ) {
             state.errors.push( item.reason )
